@@ -261,6 +261,8 @@ SBError Driver::ProcessArgs(const opt::InputArgList &args, bool &exiting) {
   if (auto *arg = args.getLastArg(OPT_script_language)) {
     auto *arg_value = arg->getValue();
     m_debugger.SetScriptLanguage(m_debugger.GetScriptingLanguage(arg_value));
+  } else {
+    m_debugger.SetScriptLanguage(lldb::ScriptLanguage::eScriptLanguageDefault);
   }
 
   if (args.hasArg(OPT_source_quietly)) {
