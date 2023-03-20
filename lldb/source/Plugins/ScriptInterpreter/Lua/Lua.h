@@ -47,6 +47,7 @@ public:
 
 private:
   lua_State *m_lua_state;
+  static const char m_builtin[];
 };
 
 } // namespace lldb_private
