@@ -37,6 +37,8 @@ Lua::Lua() : m_lua_state(luaL_newstate()) {
   luaopen_lldb(m_lua_state);
   lua_pushcfunction(m_lua_state, lldb_print);
   lua_setglobal(m_lua_state, "print");
+
+  luaL_dostring(m_lua_state, m_builtin);
 }
 
 Lua::~Lua() {
