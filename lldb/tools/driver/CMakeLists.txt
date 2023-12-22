@@ -17,6 +17,8 @@ add_lldb_tool(lldb
 
   LINK_LIBS
     liblldb
+    lldbPluginScriptInterpreterLua # hack for GNU ld
+    liblldb
 
   LINK_COMPONENTS
     Option
